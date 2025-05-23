@@ -13,7 +13,7 @@ if ($db) {
 }
 ?>
 
-<div class="spacer" <?= $preventBackground ? '' : 'style="background: lightgrey ;"'?>></div>
+<div class="spacer" style="background:<?= $changeBackground ? $changeBackground : 'lightgrey'?>"></div>
 
 <script>
   var errors = <?= $errors ?>;
