@@ -4,7 +4,7 @@
     <img src="/img/exit.png" alt="Logo" class="logo" style="height: 75px">
   </div>
   <div class="w3-padding w3-display-middle w3-center">
-    <p class="title"><b><?= isset($pageTitle) ? sanitize($pageTitle) : 'Gestion du Département informatique' ?></b></p>
+    <p class="title"><b><?= isset($pageTitle) ? sanitize($pageTitle) : 'Stack_Underflow BABYYYYYY' ?></b></p>
   </div>
   <!-- <div class="w3-padding w3-display-topright w3-margin" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
     <h4 class="title" style="padding-right: 20px"><?= $_SESSION['user']['nom_ens'] == 'admin_nom' ? 'admin' : sanitize($_SESSION['user']['nom_ens']) . " " . sanitize($_SESSION['user']['prenom_ens'])?></h4>
@@ -14,8 +14,13 @@
 
 <div>
   <nav class="w3-bar w3-card">
-    <button class="w3-bar-item w3-button headButton" data-url="/index.php">Accueil</button>
-    <button class="w3-bar-item w3-button headButton" data-url="/controllers/template.controller.php">Template</button>
+    <form method='GET'>
+      <button type='submit' class='w3-bar-item w3-button headButton'>Accueil</button>
+    </form>
+    <form method='GET'>
+      <input type='hidden' name='action' value='template'>
+      <button type='submit' class='w3-bar-item w3-button headButton'>Template</button>
+    </form>
   </nav>
 </div>
 

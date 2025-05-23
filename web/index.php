@@ -2,9 +2,9 @@
 // require_once dirname(__FILE__) . '/lib/security.lib.php';
 require_once dirname(__FILE__) . '/lib/project.lib.php';
 
-switch (GETPOST('action1')) {
+switch (GETPOST('action')) {
   case 'template':
-    include $root . '/controllers/template/template.controller.php';
+    include dirname(__FILE__) . '/controllers/template.controller.php';
     break;
 
   default:
