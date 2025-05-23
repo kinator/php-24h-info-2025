@@ -128,10 +128,33 @@ include "$root/inc/head.php";
       description: "Un musée d'histoire naturelle et d'anthropologie, avec une architecture moderne.",
       latitude: 45.4333,
       longitude: 4.8333,
-      image: "/img/confluences.jpg"
+      image: "/img/confluences.jpg",
       type: "historique"
-    }
-     
+    },
+    {
+      name: "Parc de Gerland",
+      description: "Un parc urbain avec des installations artistiques et des espaces verts.",
+      latitude: 45.724333662329336,
+      longitude: 4.827056443693007,
+      image: "/img/gerland.jpg",
+      type: "parc"
+    },
+    {
+      name: "Place des Jacobins",
+      description: "Une place emblématique de Lyon, connue pour sa fontaine et son ambiance animée.",
+      latitude: 45.76050869736537,
+      longitude: 4.833472271635074,
+      image: "/img/jacobins.jpg",
+      type: "historique"
+    },
+    {
+      name: "Place des Célestins",
+      description: "Une place animée avec des cafés et des restaurants.",
+      latitude: 45.7651,
+      longitude: 4.8343,
+      image: "/img/place_celestins.jpeg",
+      type: "historique"
+    },
 
   ];
 
