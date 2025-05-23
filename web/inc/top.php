@@ -1,11 +1,15 @@
 <!-- Navbar -->
 <div class="w3-display-container top_header" style="min-height: 150px; max-height: 200px;">
   <div class="w3-padding w3-display-left logo-container">
-    <img src="/img/logo.png" alt="Logo" class="logo" style="height: 150px">
+    <img src="/img/logo_lum.png" alt="Logo" class="logo" style="height: 150px">
   </div>
   <div class="w3-padding w3-display-middle w3-center">
     <p class="title"><b><?= isset($pageTitle) ? sanitize($pageTitle) : 'Les lumières de Lyon' ?></b></p>
   </div>
+  <audio id="bg-music" src="/audio/755983__marvin_chiriguaya__autumn.mp3" autoplay loop></audio>
+  <button id="toggle-music" class="w3-button w3-larger w3-round-large" style="position:fixed;top:10px;right:10px;z-index:1000;">
+    <i id="music-icon" class="fa fa-volume-up" style="color: white;"></i>
+  </button>
 </div>
 
 <div class="navig-bar">
@@ -29,9 +33,20 @@
 </div>
 
 <script>
-  // document.getElementById('disconnectImg').addEventListener('click', function() {
-  //     window.location.href = '/disconnect.php';
-  // });
+  document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('toggle-music');
+    const icon = document.getElementById('music-icon');
+    btn.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+        icon.className = 'fa fa-volume-up';
+      } else {
+        audio.pause();
+        icon.className = 'fa fa-volume-mute';
+      }
+    });
+  });
 
   document.querySelectorAll('.headButton').forEach(button => {
     button.addEventListener('click', function () {
