@@ -55,7 +55,7 @@ if ($db) {
     const windowHeight = window.innerHeight;
 
     const extraSpace = windowHeight - totalUsedHeight;
-    spacer.style.height = extraSpace > 0 ? `${extraSpace+1}px` : '0';
+    spacer.style.height = extraSpace > 0 ? `${extraSpace}px` : '0';
   }
 </script>
 
