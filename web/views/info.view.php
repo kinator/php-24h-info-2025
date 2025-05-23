@@ -237,19 +237,51 @@ include "$root/inc/head.php";
   }
 
   // Fonction pour calculer un itinéraire
-  function calculateRoute(startCoords, endCoords) {
-    var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
-    var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
+function calculateRoute(startCoords, endCoords) {
+  var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
+  var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
 
-    L.Routing.control({
-      waypoints: [startPoint, endPoint],
-      routeWhileDragging: true
-    }).addTo(map);
+  L.Routing.control({
+    waypoints: [startPoint, endPoint],
+    routeWhileDragging: true,
+    lineOptions: {
+      styles: [
+        { color: 'blue', opacity: 0.8, weight: 6 } // Ligne bleue, légèrement transparente, épaisseur 6
+      ]
+    }
+  }).addTo(map);
+}
+
+  function applyFilters() {
+    var filterType = document.getElementById('filter-type').value;
+
+    // Filtrer les installations en fonction du type sélectionné
+    var filteredInstallations = installations.filter(function(installation) {
+      return filterType === 'all' || installation.type === filterType;
+    });
+
+    // Afficher les marqueurs filtrés
+    displayMarkers(filteredInstallations);
+  }
+
+  // Fonction pour rechercher une installation par nom
+  function searchInstallation() {
+    var searchQuery = document.getElementById('search-installation').value.toLowerCase();
+
+    // Filtrer les installations en fonction du nom recherché
+    var filteredInstallations = installations.filter(function(installation) {
+      return installation.name.toLowerCase().includes(searchQuery);
+    });
+
+    // Afficher les marqueurs filtrés
+    displayMarkers(filteredInstallations);
   }
 
   // Initialisation des points au chargement
   initializePoints();
 </script>
+
+
 
 <?php
 include "$root/inc/footer.php";
