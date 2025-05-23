@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <div class="w3-display-container top_header" style="min-height: 150px; max-height: 200px;">
   <div class="w3-padding w3-display-left logo-container">
-    <img src="/img/logo_lum.png" alt="Logo" class="logo" style="height: 150px">
+    <img src="/img/logo_lum.png" alt="Logo" class="logo" style="height: 100px">
   </div>
   <div class="w3-padding w3-display-middle w3-center">
     <p class="title"><b><?= isset($pageTitle) ? sanitize($pageTitle) : 'Les lumières de Lyon' ?></b></p>
@@ -48,13 +48,6 @@
     });
   });
 
-  document.querySelectorAll('.headButton').forEach(button => {
-    button.addEventListener('click', function () {
-      const pageUrl = this.getAttribute('data-url')
-      window.location.href = pageUrl;
-    });
-  });
-
   function adjustTextSize() {
     const textElements = document.querySelectorAll('.title');
     const screenWidth = window.innerWidth;
@@ -65,9 +58,9 @@
     } else if (screenWidth < 800) {
       fontSize = '20px';
     } else if (screenWidth < 1100) {
-      fontSize = '28px';
+      fontSize = '24px';
     } else {
-      fontSize = '38px';
+      fontSize = '30px';
     }
 
     textElements.forEach(element => {
