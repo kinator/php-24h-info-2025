@@ -52,7 +52,37 @@ include "$root/inc/head.php";
       latitude: 45.762222,
       longitude: 4.822222,
       image: "/img/basilique.jpeg"
+    },
+    {
+      name: "Place Bellecour",
+      description : "Le Roi-Soleil, dont la statue a été restaurée, est sous son dôme de neige directement connecté à notre époque.",
+      latitude: 45.75788063428689, 
+      longitude: 4.832405876882979,
+      image: "/img/place_bellecour.jpg"
+    },
+    {
+      name: "Hôtel-Dieu",
+      description: "L'Hôtel-Dieu est un ancien hôpital, aujourd'hui un centre commercial et culturel, qui a été construit au XVIIe siècle.",
+      latitude: 45.759205280707526, 
+      longitude: 4.8361549627863845,
+      image: "/img/hotel_dieu.jpeg",
+    },
+    {
+      name: "la Guillotière",
+      description: "Un quartier animé de Lyon, connu pour sa diversité culturelle et ses restaurants.",
+      latitude: 45.75497713954937,
+      longitude: 4.839286070873936,
+      image: "/img/guillotiere.jpg"
+    },
+    {
+      name: "Musée des Confluences",
+      description: "Un musée d'histoire naturelle et d'anthropologie, avec une architecture moderne.",
+      latitude: 45.4333,
+      longitude: 4.8333,
+      image: "/img/confluences.jpg"
     }
+     
+
   ];
 
   // Ajout des marqueurs sur la carte avec des images redimensionnées
