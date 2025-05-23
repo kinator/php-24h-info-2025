@@ -1,9 +1,4 @@
 <?php
-$root = $_SERVER['DOCUMENT_ROOT'];
-include_once $root . '/vendor/autoload.php';
-require_once $root . '/lib/project.lib.php';
-
-
 switch (GETPOST('action2')) {
   case 'enseignant':
     include $root . '/controllers/template.controller.php';
@@ -16,7 +11,7 @@ switch (GETPOST('action2')) {
     break;
 
   default:
-    $pageTitle = 'template';
-    include $root . '/views/template.view.php';
+    $pageTitle = 'Page not found';
+    include $root . '/views/404.view.php';
     break;
 }

@@ -1,5 +1,5 @@
 .main-background-color {
-  background: #9b3e26;
+  background: #03135c;
 }
 
 .logo-container {
@@ -19,7 +19,7 @@
 }
 
 .top_header {
-  background: #9b3e26;
+  background: #03135c;
   color: #fff;
   padding: 10px 0;
 
@@ -30,7 +30,7 @@
 }
 
 .paraline {
-  background: #9b3e26;
+  background: #03135c;
   color: #fff;
   font-weight: bold;
   padding: 10px;
@@ -40,23 +40,24 @@
   justify-content: center;
 }
 
+.navig-bar {
+  color: white;
+  background-color: #033c5e;
+}
+
+.space-nav {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
 .one-line-table {
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
 }
 
-.grid-container {
-  display: grid;
-  gap: 10px;
-}
-
 .link {
   color: #59cafa;
-}
-
-.h4-form {
-  margin: 0;
 }
 
 .clickable {

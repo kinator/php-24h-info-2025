@@ -1,5 +1,5 @@
 <?php
-include $root . '/inc/head.php';
+include "$root/inc/head.php";
 ?>
 
 <div class="paraline w3-opacity">
@@ -9,6 +9,7 @@ include $root . '/inc/head.php';
 <div class="margin w3-border w3-padding" style="background: white;">
   <p>template</p>
 </div>
+
 <?php
-include $root . "/inc/footer.php";
+include "$root/inc/footer.php";
 ?>
