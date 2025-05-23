@@ -128,7 +128,7 @@ include "$root/inc/head.php";
       description: "Un musée d'histoire naturelle et d'anthropologie, avec une architecture moderne.",
       latitude: 45.4333,
       longitude: 4.8333,
-      image: "/img/confluences.jpg"
+      image: "/img/confluences.jpg",
       type: "historique"
     }
      
@@ -222,6 +222,31 @@ include "$root/inc/head.php";
       waypoints: [startPoint, endPoint],
       routeWhileDragging: true
     }).addTo(map);
+  }
+
+  function applyFilters() {
+    var filterType = document.getElementById('filter-type').value;
+
+    // Filtrer les installations en fonction du type sélectionné
+    var filteredInstallations = installations.filter(function(installation) {
+      return filterType === 'all' || installation.type === filterType;
+    });
+
+    // Afficher les marqueurs filtrés
+    displayMarkers(filteredInstallations);
+  }
+
+  // Fonction pour rechercher une installation par nom
+  function searchInstallation() {
+    var searchQuery = document.getElementById('search-installation').value.toLowerCase();
+
+    // Filtrer les installations en fonction du nom recherché
+    var filteredInstallations = installations.filter(function(installation) {
+      return installation.name.toLowerCase().includes(searchQuery);
+    });
+
+    // Afficher les marqueurs filtrés
+    displayMarkers(filteredInstallations);
   }
 
   // Initialisation des points au chargement
