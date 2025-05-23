@@ -246,6 +246,7 @@ function calculateRoute(startCoords, endCoords) {
     routeWhileDragging: true,
     lineOptions: {
       styles: [
+        { color: 'white', opacity: 1, weight: 12 },
         { color: 'blue', opacity: 0.8, weight: 6 } // Ligne bleue, légèrement transparente, épaisseur 6
       ]
     }
@@ -281,7 +282,15 @@ function calculateRoute(startCoords, endCoords) {
   initializePoints();
 </script>
 
-
+<style>
+.leaflet-routing-container {
+  background: white !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 10px;
+  opacity: 0.97;
+}
+</style>
 
 <?php
 include "$root/inc/footer.php";
