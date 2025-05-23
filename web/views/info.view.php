@@ -59,6 +59,8 @@ include "$root/inc/head.php";
 <script>
   // Initialisation de la carte
   var map = L.map('map').setView([45.764043, 4.835659], 13); // Coordonnées de Lyon
+  var routingControl;
+
 
   // Ajout des tuiles OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -241,7 +243,7 @@ function calculateRoute(startCoords, endCoords) {
   var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
   var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
 
-  L.Routing.control({
+  routingControl = L.Routing.control({
     waypoints: [startPoint, endPoint],
     routeWhileDragging: true,
     lineOptions: {
@@ -251,6 +253,31 @@ function calculateRoute(startCoords, endCoords) {
       ]
     }
   }).addTo(map);
+
+  routingControl.on('routesfound', function() {
+    var container = document.querySelector('.leaflet-routing-container');
+    if (container) {
+        // Ajout du bouton de fermeture
+        var closeButton = document.createElement('button');
+        closeButton.textContent = '×'; // Utilisation de textContent pour éviter les problèmes avec &times;
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '5px';
+        closeButton.style.right = '10px';
+        closeButton.style.background = 'transparent';
+        closeButton.style.border = 'none';
+        closeButton.style.fontSize = '20px';
+        closeButton.style.cursor = 'pointer';
+
+        // Ajout de l'événement pour fermer le conteneur
+        closeButton.onclick = function() {
+            map.removeControl(routingControl);
+        };
+
+        // Ajout du bouton au conteneur
+        container.style.position = 'relative';
+        container.appendChild(closeButton);
+    }
+  });
 }
 
   function applyFilters() {
