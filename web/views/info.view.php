@@ -104,7 +104,8 @@ include "$root/inc/head.php";
       description : "Le Roi-Soleil, dont la statue a été restaurée, est sous son dôme de neige directement connecté à notre époque.",
       latitude: 45.75788063428689, 
       longitude: 4.832405876882979,
-      image: "/img/place_bellecour.jpg"
+      image: "/img/place_bellecour.jpg",
+      type: "historique"
     },
     {
       name: "Hôtel-Dieu",
@@ -112,22 +113,48 @@ include "$root/inc/head.php";
       latitude: 45.759205280707526, 
       longitude: 4.8361549627863845,
       image: "/img/hotel_dieu.jpeg",
+      type: "historique"
     },
     {
       name: "la Guillotière",
       description: "Un quartier animé de Lyon, connu pour sa diversité culturelle et ses restaurants.",
       latitude: 45.75497713954937,
       longitude: 4.839286070873936,
-      image: "/img/guillotiere.jpg"
+      image: "/img/guillotiere.jpg",
+      type: "spectacle"
     },
     {
       name: "Musée des Confluences",
       description: "Un musée d'histoire naturelle et d'anthropologie, avec une architecture moderne.",
       latitude: 45.4333,
       longitude: 4.8333,
-      image: "/img/confluences.jpg"
-    }
-     
+      image: "/img/confluences.jpg",
+      type: "historique"
+    },
+    {
+      name: "Parc de Gerland",
+      description: "Un parc urbain avec des installations artistiques et des espaces verts.",
+      latitude: 45.724333662329336,
+      longitude: 4.827056443693007,
+      image: "/img/gerland.jpg",
+      type: "parc"
+    },
+    {
+      name: "Place des Jacobins",
+      description: "Une place emblématique de Lyon, connue pour sa fontaine et son ambiance animée.",
+      latitude: 45.76050869736537,
+      longitude: 4.833472271635074,
+      image: "/img/jacobins.jpg",
+      type: "historique"
+    },
+    {
+      name: "Place des Célestins",
+      description: "Une place animée avec des cafés et des restaurants.",
+      latitude: 45.7651,
+      longitude: 4.8343,
+      image: "/img/place_celestins.jpeg",
+      type: "historique"
+    },
 
   ];
 
@@ -210,19 +237,51 @@ include "$root/inc/head.php";
   }
 
   // Fonction pour calculer un itinéraire
-  function calculateRoute(startCoords, endCoords) {
-    var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
-    var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
+function calculateRoute(startCoords, endCoords) {
+  var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
+  var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
 
-    L.Routing.control({
-      waypoints: [startPoint, endPoint],
-      routeWhileDragging: true
-    }).addTo(map);
+  L.Routing.control({
+    waypoints: [startPoint, endPoint],
+    routeWhileDragging: true,
+    lineOptions: {
+      styles: [
+        { color: 'blue', opacity: 0.8, weight: 6 } // Ligne bleue, légèrement transparente, épaisseur 6
+      ]
+    }
+  }).addTo(map);
+}
+
+  function applyFilters() {
+    var filterType = document.getElementById('filter-type').value;
+
+    // Filtrer les installations en fonction du type sélectionné
+    var filteredInstallations = installations.filter(function(installation) {
+      return filterType === 'all' || installation.type === filterType;
+    });
+
+    // Afficher les marqueurs filtrés
+    displayMarkers(filteredInstallations);
+  }
+
+  // Fonction pour rechercher une installation par nom
+  function searchInstallation() {
+    var searchQuery = document.getElementById('search-installation').value.toLowerCase();
+
+    // Filtrer les installations en fonction du nom recherché
+    var filteredInstallations = installations.filter(function(installation) {
+      return installation.name.toLowerCase().includes(searchQuery);
+    });
+
+    // Afficher les marqueurs filtrés
+    displayMarkers(filteredInstallations);
   }
 
   // Initialisation des points au chargement
   initializePoints();
 </script>
+
+
 
 <?php
 include "$root/inc/footer.php";
