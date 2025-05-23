@@ -214,15 +214,20 @@ include "$root/inc/head.php";
   }
 
   // Fonction pour calculer un itinéraire
-  function calculateRoute(startCoords, endCoords) {
-    var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
-    var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
+function calculateRoute(startCoords, endCoords) {
+  var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
+  var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
 
-    L.Routing.control({
-      waypoints: [startPoint, endPoint],
-      routeWhileDragging: true
-    }).addTo(map);
-  }
+  L.Routing.control({
+    waypoints: [startPoint, endPoint],
+    routeWhileDragging: true,
+    lineOptions: {
+      styles: [
+        { color: 'blue', opacity: 0.8, weight: 6 } // Ligne bleue, légèrement transparente, épaisseur 6
+      ]
+    }
+  }).addTo(map);
+}
 
   function applyFilters() {
     var filterType = document.getElementById('filter-type').value;
@@ -252,6 +257,8 @@ include "$root/inc/head.php";
   // Initialisation des points au chargement
   initializePoints();
 </script>
+
+
 
 <?php
 include "$root/inc/footer.php";
