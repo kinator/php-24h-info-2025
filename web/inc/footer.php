@@ -60,12 +60,9 @@ if ($db) {
 </script>
 
 <footer class="w3-container w3-padding-32 w3-center w3-text-white main-background-color w3-xlarge">
-  <i class="fab fa-facebook w3-hover-opacity" aria-hidden="true"></i>
-  <i class="fab fa-instagram w3-hover-opacity" aria-hidden="true"></i>
-  <i class="fab fa-snapchat w3-hover-opacity" aria-hidden="true"></i>
-  <i class="fab fa-pinterest-p w3-hover-opacity" aria-hidden="true"></i>
-  <i class="fab fa-twitter w3-hover-opacity" aria-hidden="true"></i>
-  <i class="fab fa-linkedin w3-hover-opacity" aria-hidden="true"></i>
+  <a href="https://www.facebook.com/fetedeslumieres"><i class="fab fa-facebook w3-hover-opacity" aria-hidden="true"></i></a>
+  <a href="https://www.instagram.com/fetedeslumieres/?hl=fr"><i class="fab fa-instagram w3-hover-opacity" aria-hidden="true"></i></a>
+  <a href="https://x.com/fetelumieres"><i class="fab fa-twitter w3-hover-opacity" aria-hidden="true"></i></a>
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 

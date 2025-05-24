@@ -1,7 +1,7 @@
 <!-- Navbar -->
-<div class="w3-display-container top_header" style="min-height: 150px; max-height: 200px;">
+<div class="w3-display-container top_header" style="min-height: 140px; max-height: 200px;">
   <div class="w3-padding w3-display-left logo-container">
-    <img src="/img/logo_lum.png" alt="Logo" class="logo" style="height: 100px">
+    <img src="/img/logo.png" alt="Logo" class="logo" style="height: 130px">
   </div>
   <div class="w3-padding w3-display-middle w3-center">
     <p class="title"><b><?= isset($pageTitle) ? sanitize($pageTitle) : 'Les lumières de Lyon' ?></b></p>
@@ -13,21 +13,21 @@
 </div>
 
 <div class="navig-bar">
-  <nav class="w3-bar w3-card w3-large">
+  <nav class="w3-bar w3-card w3-large" style="display: flex; justify-content: space-between;">
     <form method='GET'>
-      <button type='submit' class='space-nav w3-bar-item w3-button headButton'>Accueil</button>
+      <button type='submit' class='w3-bar-item w3-button headButton'>Accueil</button>
     </form>
     <form method='GET'>
       <input type='hidden' name='action' value='histoire'>
-      <button type='submit' class='space-nav w3-bar-item w3-button headButton'>Histoire</button>
+      <button type='submit' class='w3-bar-item w3-button headButton'>Histoire</button>
     </form>
     <form method='GET'>
       <input type='hidden' name='action' value='photo'>
-      <button type='submit' class='space-nav w3-bar-item w3-button headButton'>Aperçus</button>
+      <button type='submit' class='w3-bar-item w3-button headButton'>Aperçus</button>
     </form>
     <form method='GET'>
       <input type='hidden' name='action' value='infos'>
-      <button type='submit' class='space-nav w3-bar-item w3-button headButton'>Infos</button>
+      <button type='submit' class='w3-bar-item w3-button headButton'>Infos</button>
     </form>
   </nav>
 </div>
