@@ -13,6 +13,7 @@ include "$root/inc/head.php";
     <img class="reveal-img w3-margin" src="/img/hotel_dieu.jpeg"/>
     <img class="reveal-img w3-margin" src="/img/jacobins.jpg"/>
     <img class="reveal-img w3-margin" src="/img/guillotiere.jpg"/>
+    <img class="reveal-img w3-margin" src="/img/wtf_city.png"/>
     <img class="reveal-img w3-margin" src="/img/logo.png"/>
   </div>
 </div>

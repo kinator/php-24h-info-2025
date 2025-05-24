@@ -20,8 +20,13 @@ switch (GETPOST('action')) {
     include dirname(__FILE__) . "/inc/head.php";
     ?>
 
+    <div>
+      <img src="/img/wtf_city.png" style="width: 100%"/>
+    </div>
+
     <div class="w3-content margin w3-border w3-padding" style="background: lightgrey;">
       <h1>La fête des lumières de Lyon</h1>
+      <p class="w3-large">La Fête des Lumières est un événement emblématique de Lyon, célébré chaque année autour du 8 décembre</p>
     </div>
 
     <?php

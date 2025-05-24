@@ -18,6 +18,10 @@
   margin-right: 5%;
 }
 
+.headButton {
+  font-size: 27px;
+}
+
 .top_header {
   background: #03135c;
   color: #fff;
@@ -45,7 +49,7 @@
   background-color: #033c5e;
 }
 
-.space-nav {
+.nav-space {
   margin-left: 3%;
   margin-right: 3%;
 }
