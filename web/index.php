@@ -30,6 +30,10 @@ switch (GETPOST('action')) {
       <p class="w3-large">Elle est à la fois culturel et artistique, et consiste à illuminer la ville avec des créations lumineuses, tout en perpétuant une tradition religieuse et populaire</p>
     </div>
 
+    <video width="640" height="360" controls>
+      <source src="fete_2024.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <?php
     include dirname(__FILE__) . "/inc/footer.php";
     break;
