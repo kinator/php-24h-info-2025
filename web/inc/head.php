@@ -27,4 +27,4 @@
             ?>
         </div>
     </div>
-    <div class="maincontent w3-display-container w3-center" style="background: rgb(11, 39, 165);">
+    <div class="maincontent w3-display-container w3-center" style="background: #517cf3;">
