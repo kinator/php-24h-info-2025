@@ -15,19 +15,19 @@
 <div class="navig-bar">
   <nav class="w3-bar w3-card w3-large">
     <form method='GET'>
-      <button type='submit' class='nav-space w3-bar-item w3-button headButton' >Accueil</button>
+      <div class="hover-underline"><button type='submit' class='nav-space w3-bar-item w3-button headButton' >Accueil</button></div>
     </form>
     <form method='GET'>
       <input type='hidden' name='action' value='histoire'>
-      <button type='submit' class='nav-space w3-bar-item w3-button headButton'>Histoire</button>
+      <div class="hover-underline"><button type='submit' class='nav-space w3-bar-item w3-button headButton'>Histoire</button></div>
     </form>
     <form method='GET'>
       <input type='hidden' name='action' value='photo'>
-      <button type='submit' class='nav-space w3-bar-item w3-button headButton'>Aperçus</button>
+      <div class="hover-underline"><button type='submit' class='nav-space w3-bar-item w3-button headButton'>Aperçus</button></div>
     </form>
     <form method='GET'>
       <input type='hidden' name='action' value='infos'>
-      <button type='submit' class='nav-space w3-bar-item w3-button headButton'>Infos</button>
+      <div class="hover-underline"><button type='submit' class='nav-space w3-bar-item w3-button headButton'>Infos</button></div>
     </form>
   </nav>
 </div>

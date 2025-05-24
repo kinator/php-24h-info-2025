@@ -18,14 +18,15 @@
   margin-right: 5%;
 }
 
-.headButton {
+.hover-underline {
   font-size: 27px;
   color: #ffffff;
   position: relative;
   display: inline-block;
 }
 
-.headButton::after, .headButton::before {
+.hover-underline::after,
+.hover-underline::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -38,13 +39,13 @@
   transition: transform 0.4s ease-out;
 }
 
-.headButton::before {
+.hover-underline::before {
   top: -5px;
   transform-origin: left;
 }
 
-.headButton:hover::after,
-.headButton:hover::before {
+.hover-underline:hover::after,
+.hover-underline:hover::before {
   transform: scaleX(1);
 }
 
