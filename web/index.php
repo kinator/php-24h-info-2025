@@ -21,7 +21,7 @@ switch (GETPOST('action')) {
     ?>
 
     
-    <div class="w3-content margin w3-padding"">
+    <div class="w3-content margin w3-padding">
     <div class="w3-content margin w3-border w3-padding" style="background: lightgrey;">
       <h1>🌟 Fête des Lumières 2025 — Lyon s’illumine du 5 au 8 décembre 🌃</h1>
       <p class="w3-large">Chaque année autour du 8 décembre, Lyon devient la capitale mondiale de la lumière !</p>

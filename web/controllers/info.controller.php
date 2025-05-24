@@ -219,6 +219,7 @@ switch (GETPOST('action2')) {
       container.style.maxHeight = '480px';
       container.style.maxWidth = '480px';
       container.style['overflow-y'] = 'scroll';
+      container.style.color = 'black';
       if (container) {
           // Ajout du bouton de fermeture
           var closeButton = document.createElement('button');
