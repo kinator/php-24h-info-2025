@@ -14,7 +14,7 @@ include "$root/inc/head.php";
     <img class="reveal-img w3-margin" src="/img/jacobins.jpg"/>
     <img class="reveal-img w3-margin" src="/img/guillotiere.jpg"/>
     <img class="reveal-img w3-margin" src="/img/wtf_city.png"/>
-    <img class="reveal-img w3-margin" src="/img/image_1.png.png"/>
+    <img class="reveal-img w3-margin" src="/img/image_1.png"/>
     <img class="reveal-img w3-margin" src="/img/logo.png"/>
   </div>
 </div>
