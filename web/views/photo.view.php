@@ -3,13 +3,70 @@ include "$root/inc/head.php";
 ?>
 <div style='background: black;'>
   <div class="margin w3-padding w3-center w3-responsive">
-    <div class="w3-padding-32 w3-grey w3-circle w3-center" style="width: 230px; height: 230px; margin: auto;">
+    <div class="w3-padding-32 light-circle w3-circle w3-center" style="width: 250px; height: 250px; margin: auto;">
       <h1>Votre souris illuminera la voie</h1>
     </div>
-    <img class="reveal-img" src="/img/logo.png"/>
+    <?php
+    $folder = '/img';
+    $images = glob($folder . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+
+    foreach ($images as $image) {
+      echo $image;
+    }
+    ?>
+    <img class="reveal-img" src="/img/basilique.jpeg"/>
+    <img class="reveal-img" src="/img/gerland.jpg"/>
+    <img class="reveal-img" src="/img/parc.jpg"/>
+    <img class="reveal-img" src="/img/place_celestins.jpeg"/>
+    <img class="reveal-img" src="/img/hotel_dieu.jpeg"/>
+    <img class="reveal-img" src="/img/jacobins.jpg"/>
+    <img class="reveal-img" src="/img/guillotiere.jpg"/>
     <img class="reveal-img" src="/img/logo.png"/>
   </div>
 </div>
+
+<script>
+document.querySelectorAll('.reveal-img').forEach(function(img) {
+  // Create the gradient circle
+  var circle = document.createElement('div');
+  circle.className = 'light-circle';
+  Object.assign(circle.style, {
+    position: 'absolute',
+    width: '60px',
+    height: '60px',
+    borderRadius: '50%',
+    pointerEvents: 'none',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 2,
+    display: 'block'
+  });
+
+  // Wrap the image in a relative container
+  var wrapper = document.createElement('div');
+  wrapper.style.position = 'relative';
+  wrapper.style.display = 'inline-block';
+  img.style.maxWidth = '700px'
+  img.style.minWidth = '400px'
+
+  img.parentNode.insertBefore(wrapper, img);
+  wrapper.appendChild(img);
+  wrapper.appendChild(circle);
+
+  // Show circle only when brightness is low (initially)
+  circle.style.display = 'block';
+
+  img.addEventListener('mouseenter', function() {
+    img.style.filter = 'brightness(1) grayscale(0)';
+    circle.style.display = 'none';
+  });
+  img.addEventListener('mouseleave', function() {
+    img.style.filter = 'brightness(0.1) grayscale(1)';
+    circle.style.display = 'block';
+  });
+});
+</script>
 
 <style>
   .reveal-img {
@@ -19,26 +76,9 @@ include "$root/inc/head.php";
   }
 
   .light-circle {
-    background: radial-gradient(circle, #FFFFFFFF, #FFFFFF86, #FFFFFF00);
+    background: radial-gradient(circle, #FFFFFFE0, #FFFFFF4F, #FFFFFF00);
   }
 </style>
-
-<script>
-document.querySelectorAll('.reveal-img').forEach(function(img) {
-  img.addEventListener('mousemove', function(e) {
-    img.style.filter = 'brightness(1) grayscale(0)';
-    img.classList.remove()
-  });
-  img.addEventListener('mouseleave', function(e) {
-    img.style.filter = 'brightness(0.1) grayscale(1)';
-    img.classList.remove()
-  });
-  img.addEventListener('mouseenter', function(e) {
-    img.style.filter = 'brightness(1) grayscale(0)';
-    img.classList.add('w3-circle')
-  });
-});
-</script>
 
 <?php
 $changeBackground = 'black';
