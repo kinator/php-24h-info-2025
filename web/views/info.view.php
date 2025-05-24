@@ -4,7 +4,7 @@ include "$root/inc/head.php";
 ?>
 
 <!-- Conteneur principal -->
-<div class="margin w3-border w3-padding" style="background: white;">
+<div class="w3-content margin w3-border w3-padding" style="background: lightgrey;">
   <h1>INFO</h1>
 
   <!-- Formulaire pour les filtres, la recherche et l'itinéraire -->
