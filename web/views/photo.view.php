@@ -6,22 +6,14 @@ include "$root/inc/head.php";
     <div class="w3-padding-32 light-circle w3-circle w3-center" style="width: 250px; height: 250px; margin: auto;">
       <h1>Votre souris illuminera la voie</h1>
     </div>
-    <?php
-    $folder = '/img';
-    $images = glob($folder . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-
-    foreach ($images as $image) {
-      echo $image;
-    }
-    ?>
-    <img class="reveal-img" src="/img/basilique.jpeg"/>
-    <img class="reveal-img" src="/img/gerland.jpg"/>
-    <img class="reveal-img" src="/img/parc.jpg"/>
-    <img class="reveal-img" src="/img/place_celestins.jpeg"/>
-    <img class="reveal-img" src="/img/hotel_dieu.jpeg"/>
-    <img class="reveal-img" src="/img/jacobins.jpg"/>
-    <img class="reveal-img" src="/img/guillotiere.jpg"/>
-    <img class="reveal-img" src="/img/logo.png"/>
+    <img class="reveal-img w3-margin" src="/img/basilique.jpeg"/>
+    <img class="reveal-img w3-margin" src="/img/gerland.jpg"/>
+    <img class="reveal-img w3-margin" src="/img/parc.jpg"/>
+    <img class="reveal-img w3-margin" src="/img/place_celestins.jpeg"/>
+    <img class="reveal-img w3-margin" src="/img/hotel_dieu.jpeg"/>
+    <img class="reveal-img w3-margin" src="/img/jacobins.jpg"/>
+    <img class="reveal-img w3-margin" src="/img/guillotiere.jpg"/>
+    <img class="reveal-img w3-margin" src="/img/logo.png"/>
   </div>
 </div>
 
@@ -47,8 +39,6 @@ document.querySelectorAll('.reveal-img').forEach(function(img) {
   var wrapper = document.createElement('div');
   wrapper.style.position = 'relative';
   wrapper.style.display = 'inline-block';
-  img.style.maxWidth = '700px'
-  img.style.minWidth = '400px'
 
   img.parentNode.insertBefore(wrapper, img);
   wrapper.appendChild(img);
@@ -60,6 +50,24 @@ document.querySelectorAll('.reveal-img').forEach(function(img) {
   img.addEventListener('mouseenter', function() {
     img.style.filter = 'brightness(1) grayscale(0)';
     circle.style.display = 'none';
+  });
+  img.addEventListener('resize', function() {
+    if (screen.width < 900) {
+      img.style.maxWidth = '300px'
+      img.style.minWidth = '200px'
+    } else {
+      img.style.maxWidth = '700px'
+      img.style.minWidth = '500px'
+    }
+  });
+  img.addEventListener('load', function() {
+    if (screen.width < 900) {
+      img.style.maxWidth = '300px'
+      img.style.minWidth = '200px'
+    } else {
+      img.style.maxWidth = '700px'
+      img.style.minWidth = '500px'
+    }
   });
   img.addEventListener('mouseleave', function() {
     img.style.filter = 'brightness(0.1) grayscale(1)';

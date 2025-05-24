@@ -157,7 +157,6 @@ include "$root/inc/head.php";
       image: "/img/place_celestins.jpeg",
       type: "historique"
     },
-
   ];
 
   // Fonction pour afficher les marqueurs
@@ -239,46 +238,49 @@ include "$root/inc/head.php";
   }
 
   // Fonction pour calculer un itinéraire
-function calculateRoute(startCoords, endCoords) {
-  var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
-  var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
+  function calculateRoute(startCoords, endCoords) {
+    var startPoint = L.latLng(...startCoords.split(',').map(parseFloat));
+    var endPoint = L.latLng(...endCoords.split(',').map(parseFloat));
 
-  routingControl = L.Routing.control({
-    waypoints: [startPoint, endPoint],
-    routeWhileDragging: true,
-    lineOptions: {
-      styles: [
-        { color: 'white', opacity: 1, weight: 12 },
-        { color: 'blue', opacity: 0.8, weight: 6 } // Ligne bleue, légèrement transparente, épaisseur 6
-      ]
-    }
-  }).addTo(map);
+    routingControl = L.Routing.control({
+      waypoints: [startPoint, endPoint],
+      routeWhileDragging: true,
+      lineOptions: {
+        styles: [
+          { color: 'white', opacity: 1, weight: 12 },
+          { color: 'blue', opacity: 0.8, weight: 6 } // Ligne bleue, légèrement transparente, épaisseur 6
+        ]
+      }
+    }).addTo(map);
 
-  routingControl.on('routesfound', function() {
-    var container = document.querySelector('.leaflet-routing-container');
-    if (container) {
-        // Ajout du bouton de fermeture
-        var closeButton = document.createElement('button');
-        closeButton.textContent = '×'; // Utilisation de textContent pour éviter les problèmes avec &times;
-        closeButton.style.position = 'absolute';
-        closeButton.style.top = '5px';
-        closeButton.style.right = '10px';
-        closeButton.style.background = 'transparent';
-        closeButton.style.border = 'none';
-        closeButton.style.fontSize = '20px';
-        closeButton.style.cursor = 'pointer';
+    routingControl.on('routesfound', function() {
+      var container = document.querySelector('.leaflet-routing-container');
+      container.style.maxHeight = '480px';
+      container.style.maxWidth = '480px';
+      container.style['overflow-y'] = 'scroll';
+      if (container) {
+          // Ajout du bouton de fermeture
+          var closeButton = document.createElement('button');
+          closeButton.textContent = '×'; // Utilisation de textContent pour éviter les problèmes avec &times;
+          closeButton.style.position = 'absolute';
+          closeButton.style.top = '5px';
+          closeButton.style.right = '10px';
+          closeButton.style.background = 'transparent';
+          closeButton.style.border = 'none';
+          closeButton.style.fontSize = '20px';
+          closeButton.style.cursor = 'pointer';
 
-        // Ajout de l'événement pour fermer le conteneur
-        closeButton.onclick = function() {
-            map.removeControl(routingControl);
-        };
+          // Ajout de l'événement pour fermer le conteneur
+          closeButton.onclick = function() {
+              map.removeControl(routingControl);
+          };
 
-        // Ajout du bouton au conteneur
-        container.style.position = 'relative';
-        container.appendChild(closeButton);
-    }
-  });
-}
+          // Ajout du bouton au conteneur
+          container.style.position = 'relative';
+          container.appendChild(closeButton);
+      }
+    });
+  }
 
   function applyFilters() {
     var filterType = document.getElementById('filter-type').value;
@@ -308,16 +310,6 @@ function calculateRoute(startCoords, endCoords) {
   // Initialisation des points au chargement
   initializePoints();
 </script>
-
-<style>
-.leaflet-routing-container {
-  background: white !important;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  padding: 10px;
-  opacity: 0.97;
-}
-</style>
 
 <?php
 include "$root/inc/footer.php";
