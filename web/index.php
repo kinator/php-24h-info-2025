@@ -20,21 +20,34 @@ switch (GETPOST('action')) {
     include dirname(__FILE__) . "/inc/head.php";
     ?>
 
+    
+    <div class="w3-content margin w3-padding"">
+    <div class="w3-content margin w3-border w3-padding" style="background: lightgrey;">
+      <h1>🌟 Fête des Lumières 2025 — Lyon s’illumine du 5 au 8 décembre 🌃</h1>
+      <p class="w3-large">Chaque année autour du 8 décembre, Lyon devient la capitale mondiale de la lumière !</p>
+      <p class="w3-large">En 2025, retrouve l’événement du vendredi 5 au lundi 8 décembre, dès la tombée de la nuit, dans toute la ville.</p>
+
+      <p>🔍 <strong>1 à 2 millions de visiteurs :</strong> C’est l’un des événements les plus populaires d’Europe.</p>
+      <p>🎨 <strong>Des œuvres d’art du monde entier :</strong> Installations immersives, interactives, mapping, poésie visuelle.</p>
+      <p>📱 <strong>Une appli mobile</strong> (souvent dispo selon l’édition) te guide en temps réel avec carte interactive et programme : cherche Lyon Lumières sur les stores.</p>
+
+      <h2>📍 Top des lieux à ne pas rater :</h2>
+      <ul>
+        <li><strong>Place Bellecour :</strong> Grosse œuvre centrale ou installation interactive</li>
+        <li><strong>Fourvière :</strong> Superbe vue + projections grandioses</li>
+        <li><strong>Parc de la Tête d'Or :</strong> Balade féerique dans la nature</li>
+        <li><strong>Cathédrale Saint-Jean :</strong> Mapping vidéo iconique</li>
+        <li><strong>Place des Terreaux :</strong> Show lumière sur l’Hôtel de Ville</li>
+      </ul>
+    </div>
     <div>
       <img src="/img/wtf_city.png" style="width: 100%"/>
     </div>
+  </div>
 
-    <div class="w3-content margin w3-border w3-padding" style="background: lightgrey;">
-      <h1>La fête des lumières de Lyon</h1>
-      <p class="w3-large">La Fête des Lumières de Lyon est un événement emblématique de Lyon, célébré chaque année autour du 8 décembre</p>
-      <p class="w3-large">Elle est à la fois culturel et artistique, et consiste à illuminer la ville avec des créations lumineuses, tout en perpétuant une tradition religieuse et populaire</p>
-    </div>
 
-    <video width="640" height="360" controls>
-      <source src="fete_2024.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
     <?php
+      $changeBackground = "#517cf3";
     include dirname(__FILE__) . "/inc/footer.php";
     break;
 

@@ -1,4 +1,5 @@
 <?php
+    $changeBackground = "#517cf3";
 include "$root/inc/head.php";
 ?>
 
