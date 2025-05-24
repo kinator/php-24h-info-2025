@@ -26,7 +26,8 @@ switch (GETPOST('action')) {
 
     <div class="w3-content margin w3-border w3-padding" style="background: lightgrey;">
       <h1>La fête des lumières de Lyon</h1>
-      <p class="w3-large">La Fête des Lumières est un événement emblématique de Lyon, célébré chaque année autour du 8 décembre</p>
+      <p class="w3-large">La Fête des Lumières de Lyon est un événement emblématique de Lyon, célébré chaque année autour du 8 décembre</p>
+      <p class="w3-large">Elle est à la fois culturel et artistique, et consiste à illuminer la ville avec des créations lumineuses, tout en perpétuant une tradition religieuse et populaire</p>
     </div>
 
     <?php

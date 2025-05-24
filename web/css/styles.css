@@ -102,3 +102,13 @@
   padding: 10px;
   opacity: 0.97;
 }
+
+.reveal-img {
+  filter: brightness(0.1) grayscale(1);
+  transition: filter 0.2s;
+  will-change: filter;
+}
+
+.light-circle {
+  background: radial-gradient(circle, #FFFFFFE0, #FFFFFF4F, #FFFFFF00);
+}
