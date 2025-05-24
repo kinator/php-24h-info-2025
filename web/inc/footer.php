@@ -8,9 +8,6 @@ $confirms = json_encode($confirms);
 unset($_SESSION['mesgs']['errors']);
 unset($_SESSION['mesgs']['confirm']);
 
-if ($db) {
-    $db = NULL;
-}
 ?>
 
 <div class="spacer" style="background:<?= $changeBackground ? $changeBackground : 'lightgrey'?>"></div>
